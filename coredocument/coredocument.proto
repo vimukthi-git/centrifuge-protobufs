@@ -33,6 +33,8 @@ message CoreDocument {
   // current_version is the version used to refer to the current state of the document.
   // 32 byte value
   bytes current_version = 3;
+  // next_preimage is the sha256 pre-image of the next_version. It prevents next state commitment id(anchor id) from getting exposed.
+  bytes next_preimage = 22;
   // next_version is the version that is going to be used for the next version if any
   // party wants to update the state.
   bytes next_version = 4;
